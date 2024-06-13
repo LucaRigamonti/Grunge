@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/grunge.css" type="text/css">
+    <link rel="stylesheet" href="../css/session.css" type="text/css">
+    <link rel="stylesheet" href="../css/json.css" type="text/css">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <main>
+        <header>
+            <div class="logo">
+              <img src="../img/logo-removebg-preview.png" alt="Logo">
+            </div>
+            <nav>
+              <ul id="navbar">
+                <li><a href="grunge-index.html">HOME</a></li>
+                <li><a href="session.html">SESSION</a></li>
+                <li><a class="active" href="#">PRODUCTIONS</a></li>
+                <li><a href="utente.html"><img src="../img/utente.png" alt="User Icon" style="width: 50px; height: 50px;"></a></li>
+              </ul>
+            </nav>
+        </header>
+
+        <div class="pos-f-t mobile-nav">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <a href="grunge-index.html"><h5 class="text-white h4">HOME</h5></a>
+                    <a href="session.html"><h5 class="text-white h4">SESSION</h5></a>
+                    <a href="prod.html"><h5 class="text-white h4">RECORD</h5></a>
+                    <a href="grunge-index.html"><h5 class="text-white h4">PRODUCTION</h5></a>   
+                </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+
+        <div class="content-text">
+            <div class="cont">
+                <h1>We are Grunge is Dead</h1>
+                <p class="lead">
+                    Grunge is Dead Label is a prominent record company in Italy and globally, dedicated to music, innovation, and corporate development. The company manages businesses in Recorded Music, Music Publishing, Merchandising, and Audiovisual content across over 60 countries.
+                </p>
+                <p class="lead">
+                    The label's mission is to identify and nurture talented artists, performers, songwriters, and authors. It produces, distributes, and promotes acclaimed musical hits that engage fans of all genres, boasting a catalog that spans over a century of recordings and songs.
+                </p>
+                <p class="lead">
+                    Grunge is Dead has a roster of renowned Italian and international artists and emerging talents who meet public expectations across every musical genre. Their artists deliver music that resonates worldwide, supported by a commitment to nurturing new talent and established artists.
+                </p>
+            </div>
+            <div class="cont">
+                <p class="lead">
+                    Embracing digital technology, Grunge is Dead leads in developing new services, platforms, and business models for music delivery. The label supports innovators and drives the creation of new commercial and artistic opportunities, ensuring their music reaches a global audience.
+                </p>
+                <p class="lead">
+                    Grunge is Dead’s holistic approach to music recognizes its power to inspire and unite people, transcending borders and bridging cultural divides. The label strives to make a positive impact through music, fostering unity and shared experiences among listeners.
+                </p>
+                <p class="lead">
+                    Home to music's greatest artists, innovators, and entrepreneurs, Grunge is Dead supports creative endeavors and helps artists achieve their vision. The professional team ensures the success of every release, from production to promotion and distribution.
+                </p>
+                <p class="lead">
+                    The label is also a leader in music publishing, with an extensive catalog of iconic songs and compositions. They work closely with songwriters and composers, preserving cultural heritage while fostering new and innovative works.
+                </p>
+                <p class="lead">
+                    Merchandising is another key area, offering products that connect fans with their favorite artists. From apparel to exclusive memorabilia, the merchandise captures the music's spirit and the fans' passion.
+                </p>
+                <p class="lead">
+                    The audiovisual content division produces music videos, documentaries, and other visual media that bring the music to life. Collaborations with top directors and producers create compelling, visually stunning content that enhances the music and deepens artist-fan connections.
+                </p>
+                <p class="lead">
+                    Grunge is Dead’s success is built on the talent and dedication of its artists and employees. The label fosters a supportive and inclusive environment where creativity thrives, leading the industry with innovation and excellence.
+                </p>
+                <p class="lead">
+                    Proud of its legacy and excited for the future, Grunge is Dead is committed to bringing the best music to fans worldwide. They are the future of music.
+                </p>
+            </div>
+            <div class="cont"></div>
+        </div>
+
+        <h4>Search for the top 3 albums by your favorite artists</h4>
+        <div class="srch shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="filmTitle">
+            <button type="button" class="btn btn-outline-warning" onclick="searchfilm()">Search</button>
+        </div>
+        
+        <div id="loading" class="center">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+    
+        <div id="searchResults">
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome Artista</th>
+                        <th scope="col">Nome Album</th>
+                        <th scope="col">Ascolta Ora</th>
+                        <th scope="col">Copertina</th>
+                    </tr>
+                </thead>
+                <tbody id="resultTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <section id="bottom">
+            <div class="foot">
+              <ul>
+                <li><a href="grunge-index.html">HOME</a></li><br>
+                <li><a href="session.html">SESSION</a></li><br>
+                <li><a class="active" href="#">PRODUCTIONS</a></li><br>
+                <li><a href="utente.html"><img src="../img/utente.png" alt="User Icon" style="width: 50px; height: 50px;"></a></li>
+              </ul>
+            </div>
+            <div class="foot">
+              <p>
+                Fondazione di partecipazione ISTITUTO TECNICO SUPERIORE ANGELO RIZZOLI C.F./P.iva 07167930960 · REA di Milano 1954932
+                SEDE LEGALE: Piazza Castello, 28 ∙ 20121 Milano | SEDE OPERATIVA: Via B. Crespi, 30 ∙ 20159 Milano
+                2021 © ITS Angelo Rizzoli<br><br>
+                +39 3924765251<br><br>
+                lucarigamonti@itsrizzoli.it
+              </p>
+            </div>
+            <div class="foot">
+              <form method="POST" action="login.html" id="frm">
+                EMAIL<br>
+                <input class="camp" type="email" name="email" required><br><br>
+                PASSWORD<br>
+                <input class="camp" type="password" name="pwd" required><br>
+                <input type="submit" value="Login" name="accedi" id="log"><br>
+                <div><a href="create.html" id="create">Create account</a></div>
+              </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+       function searchfilm() {
+    const filmTitle = document.getElementById('filmTitle').value;
+    const searchUrl = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${filmTitle}&api_key=7d1e90da9fa537a0f1d7d683a11ec62f&format=json`;
+
+    // Mostra l'animazione di caricamento
+    document.getElementById('loading').style.display = 'flex';
+    document.getElementById('searchResults').style.display = 'none';
+
+    // Effettua la richiesta usando Fetch
+    fetch(searchUrl)
+        .then(response => {
+            // Verifica se la risposta è valida
+            if (!response.ok) {
+                throw new Error('Errore nella richiesta API');
+            }
+            // Analizza la risposta JSON
+            return response.json();
+        })
+        .then(data => {
+            let resultHtml = '';
+            let i = 0; // Dichiarata all'esterno del ciclo forEach
+            // Costruisci il contenuto da visualizzare
+            data.topalbums.album.slice(0, 3).forEach(album => {
+                const position = i + 1;
+                const artistName = album.artist.name;
+                const albumName = album.name;
+                const artistUrl = album.artist.url;
+                const albumImage = album.image.find(img => img.size === "large")["#text"];
+                i++; // Incrementa i ad ogni iterazione
+
+                resultHtml += `
+                    <tr>
+                        <td>${position}</td>
+                        <td>${artistName}</td>
+                        <td>${albumName}</td>
+                        <td><a href="${artistUrl}">Ascolta ora</a></td>
+                        <td><img src="${albumImage}" alt="Album Cover"></td>
+                    </tr>
+                `;
+            });
+
+            // Nascondi l'animazione di caricamento dopo 3 secondi e mostra i risultati
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('searchResults').style.display = 'block';
+
+                // Inserisci il contenuto nella tabella
+                document.getElementById('resultTableBody').innerHTML = resultHtml;
+            }, 3000);
+        })
+        .catch(error => {
+            // Gestisci gli errori
+            console.error('Errore durante la richiesta API:', error);
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('resultTableBody').innerHTML = `
+                <tr>
+                    <td colspan="5">Errore: ${error.message}</td>
+                </tr>
+            `;
+        });
+}
+    </script>
+    
+          
+</body>
+</html>

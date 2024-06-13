@@ -1,0 +1,66 @@
+.welcome {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(to right, rgb(255, 208, 0), rgb(0, 0, 0));
+}
+.welcome img {
+  width: 10%;
+  height: 10%;
+}
+
+.form-boss {
+  width: 30%;
+  height: 60vh;
+  background-color: black;
+  color: rgb(255, 208, 0);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  border: 2px solid;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 2%;
+  box-sizing: border-box;
+}
+.form-boss input {
+  width: 77%;
+  height: 5vh;
+  margin: auto;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-left: 2%;
+  font-size: small;
+  border: 1px solid rgb(255, 208, 0);
+}
+.form-boss label {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: xx-large;
+  margin: auto;
+}
+.form-boss .camp, .form-boss option {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-left: 2%;
+  font-size: small;
+  border: 1px solid rgb(255, 208, 0);
+  height: 5vh;
+}
+.form-boss .sub {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 208, 0);
+  font-size: medium;
+  height: 15%;
+  margin-top: 8%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: x-large;
+  transition: 0.3s;
+}
+.form-boss .sub:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 1%;
+  margin: auto;
+}/*# sourceMappingURL=utente.css.map */

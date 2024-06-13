@@ -1,0 +1,129 @@
+.form-control {
+    width: 30%;
+}
+.srch{display: flex;}
+
+#navbar{
+  margin-top: 4%;
+
+}
+
+bodY {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .center {
+    height: 50vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+  }
+  .wave {
+    width: 5px;
+    height: 100px;
+    background: linear-gradient(45deg, rgb(255, 208, 0), #fff);
+    margin: 10px;
+    animation: wave 1s linear infinite;
+    border-radius: 20px;
+  }
+  .wave:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .wave:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .wave:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .wave:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  .wave:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+  .wave:nth-child(7) {
+    animation-delay: 0.6s;
+  }
+  .wave:nth-child(8) {
+    animation-delay: 0.7s;
+  }
+  .wave:nth-child(9) {
+    animation-delay: 0.8s;
+  }
+  .wave:nth-child(10) {
+    animation-delay: 0.9s;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  .content-text {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px; /* Spazio tra le griglie, puoi regolarlo come preferisci */
+}
+
+.cont:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-left:3% ;
+}
+.cont:nth-child(2) {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+}
+
+.cont:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-image: url("../img/podu-disc.jpeg");
+}
+
+
+
+h1 {
+    text-align: center;
+    margin: 5%;
+    text-shadow: 2px 2px  rgb(0, 0, 0);
+}
+
+p {
+    text-align: left;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.lead{
+  font-size:medium;
+}
+
+#bottom p{
+  text-align: center;
+}
+
+h4{
+  margin-top: 10%;
+  margin-left: 1%;
+  font-size: larger;
+}
+
+tbody a{
+color: rgb(255, 208, 0);
+}
+tbody a:hover{
+  color: rgb(255, 208, 0);
+  opacity: 0.6;
+  }
+  

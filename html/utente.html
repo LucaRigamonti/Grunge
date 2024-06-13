@@ -1,0 +1,91 @@
+<!DOCTYPE html>	<!--commento: obbligatorio in HTML5, indica il contenuto del file-->
+<html>
+  <head>
+  <meta charset="UTF-8">	<!--i caratteri occidentali-->
+	<title>Grunge is dead</title> 
+	<link rel="stylesheet" href="../css/grunge.css" type="text/css">
+  <link rel="stylesheet" href="../css/session.css" type="text/css">
+  <link rel="stylesheet" href="../css/utente.css" type="text/css">
+  <script src="../js/grunge.js" defer></script>
+
+
+  </head>
+  <body >
+
+
+    <main>
+
+      <header>
+        <div class="logo">
+          <img src="../img/logo-removebg-preview.png" alt="Logo">
+        </div>
+
+        <nav>
+          <ul id="navbar">
+            <li><a class="active" href="#">HOME</a></li>
+            <li><a href="session.html">SESSION</a></li>
+            <li><a href="fileJson.html">PRODUCTIONS</a></li>
+            <li><a href="utente.html"><img src="../img/utente.png" alt="User Icon" style="width: 50px; height: 50px;"></a></li>
+          </ul>
+        </nav>        
+      </header>
+
+      <section class="welcome">
+        <img src="../img/utente-black.png">
+        <p id="welcome-name"></p>
+      </section>
+
+
+
+      <h1>SIGN IN</h1>
+
+      <form class="form-boss">
+        <label for="form-name">NICKNAME</label> 
+        <input id="form-name" type="text" minlength="3" maxlength="25" required><br>
+        <label for="role">ROLE</label><br>
+        <select id="role" name="role" class="camp" required></select><br>
+        <label for="pwd">PASSWORD</label>
+        <input type="password" id="psw" required minlength="8"><br>
+        <input type="button" value="Log in" id="invia" class="sub">
+      </form>
+
+      <section id="bottom">
+        <div class="foot">
+          <ul>
+            <li><a href="grunge-index.html">HOME</a></li><br>
+            <li><a href="session.html">SESSION</a></li><br>
+            <li><a class="active" href="#">PRODUCTIONS</a></li><br>
+            <li><a href="utente.html"><img src="../img/utente.png" alt="User Icon" style="width: 50px; height: 50px;"></a></li>
+          </ul>
+        </div>
+        <div class="foot">
+          <p>
+            Fondazione di partecipazione ISTITUTO TECNICO SUPERIORE ANGELO RIZZOLI C.F./P.iva 07167930960 · REA di Milano 1954932
+            SEDE LEGALE: Piazza Castello, 28 ∙ 20121 Milano | SEDE OPERATIVA: Via B. Crespi, 30 ∙ 20159 Milano
+            2021 © ITS Angelo Rizzoli<br><br>
+            +39 3924765251<br><br>
+            lucarigamonti@itsrizzoli.it
+          </p>
+        </div>
+        <div class="foot">
+          <form method="POST" action="login.html" id="frm">
+            EMAIL<br>
+            <input class="camp" type="email" name="email" required><br><br>
+            PASSWORD<br>
+            <input class="camp" type="password" name="pwd" required><br>
+            <input type="submit" value="Login" name="accedi" id="log"><br>
+            <div><a href="create.html" id="create">Create account</a></div>
+          </form>
+        </div>
+    </section>
+
+    </main>
+
+
+   
+   
+
+    
+
+  </body>
+</html>

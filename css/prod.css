@@ -1,0 +1,42 @@
+#header{
+    background-color: rgb(255, 208, 0);
+    color: black;
+}
+
+#text, #pren{
+    margin-top: 90px;
+}
+
+#text{
+    margin-top: 150px
+}
+
+#navbar{
+    color: black;
+}
+
+#nolink{
+    color:rgb(0, 0, 0) ;
+} 
+#navbar li a:visited{
+    color: rgb(0, 0, 0) ;
+}
+#navbar li a:link {
+    color : rgb(0, 0, 0);
+    text-shadow: 2px 2px 0px rgb(255, 208, 0);
+    text-decoration: none
+    
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    bottom: -8px;
+    left: 20px;
+    transition: 0.5s;
+    
+}

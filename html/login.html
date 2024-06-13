@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css" type="text/css">
+    <title>Login</title>
+</head>
+<body bgcolor="black">
+
+    <form method="POST" action="" id="frm">
+        <label for="email">EMAIL</label><br>
+        <input class="camp" type="email" name="email" required><br><br>
+        <label for="pwd">PASSWORD</label><br>
+        <input class="camp" type="password" name="pwd" required><br>
+        <input type="submit" value="Login" name="accedi" id="log"><br>
+        <div><a href="create.php" id="create">Create account</a></div>
+    </form>
+    <?php
+    if(isset($_POST["accedi"]))
+    {
+        $pwd = $_POST["pwd"];
+        $email = $_POST["email"];
+
+        $conn = mysqli_connect("localhost", "root", "", "grunge");
+        $query = "SELECT * FROM utente WHERE email = '$email'";
+        $ris = mysqli_query($conn, $query);
+
+        if(mysqli_num_rows($ris) > 0)
+        {
+            $row = mysqli_fetch_assoc($ris);
+            if(password_verify($pwd, $row["psw"]))
+            {
+                session_start();
+                
+                $_SESSION["user"] = $email;
+            
+
+                header("Location:grunge-index.php");
+            }
+            else
+            echo "<p>Password errata</p>";
+        }
+        else
+        {
+            echo "<p>Email non registrata</p>";
+        }
+
+    }
+
+?>
+    
+    
+</body>
+</html>

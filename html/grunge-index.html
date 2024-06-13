@@ -1,0 +1,102 @@
+<!DOCTYPE html> <!--commento: obbligatorio in HTML5, indica il contenuto del file-->
+<html>
+  <head>
+    <meta charset="UTF-8"> <!--i caratteri occidentali-->
+    <title>Grunge is dead</title>
+    <link rel="stylesheet" href="../css/grunge.css" type="text/css">
+    
+    
+    <script src="../js/grunge.js" defer></script>
+    
+  </head>
+  <body>
+
+
+    <main>
+      <section id="hero">
+        <header>
+          <div class="logo">
+            <img src="../img/logo-removebg-preview.png" alt="Logo">
+          </div>
+  
+          <nav>
+            <ul id="navbar">
+              <li><a class="active" href="#">HOME</a></li>
+              <li><a href="session.html">SESSION</a></li>
+              <li><a href="fileJson.html">PRODUCTIONS</a></li>
+              <li><a href="utente.html"><img src="../img/utente.png" alt="User Icon" style="width: 50px; height: 50px;"></a></li>
+            </ul>
+          
+            
+            
+          </nav>
+          
+        </header>
+
+        
+        
+  
+        <div id="subdiv"><a href="login.html"><input type="button" value="SUBSCRIBE NOW" name="sub" id="sub"></a></div>
+      </section>
+  
+      <section id="session">
+        <div class="room-container">
+          <a href="session.html#blue"><input class="room" type="button" value="SHOW MORE"></a>
+        </div>
+        <div class="room-container">
+          <a href="session.html#red"><input class="room" type="button" value="SHOW MORE"></a>
+        </div>
+        <div class="room-container">
+          <a href="session.html#green"><input class="room" type="button" value="SHOW MORE"></a>
+        </div>
+      </section>
+  
+      <section id="recording">
+        <div id="divrec"><a href="session.html#rec"><input class="room" type="button" value="SHOW MORE"></a></div>
+      </section>
+  
+      <section id="prod">
+        <div class="content-major"></div>
+        <div class="content-major">
+            <img class="img-join" src="../img/JOIN-PhotoRoom.png-PhotoRoom.png" alt="Join Image">
+            <div id="divprod"><a href="prod.html"><input class="room" type="button" value="SHOW MORE"></a></div>
+        </div>
+      </section>
+  
+    
+  
+      <section id="bottom">
+        <div class="foot">
+            <ul>
+                <li><a href="#hero">HOME</a></li><br>
+                <li><a href="#session">SESSION</a></li><br>
+                <li><a href="#prod">PRODUCTIONS</a></li><br>
+                <li><a href="utente.html"><img src="../img/utente.png" alt="User Icon" style="width: 50px; height: 50px;"></a></li>
+            </ul>
+        </div>
+        <div class="foot">
+            <p>
+                Fondazione di partecipazione ISTITUTO TECNICO SUPERIORE ANGELO RIZZOLI C.F./P.iva 07167930960 · REA di Milano 1954932
+                SEDE LEGALE: Piazza Castello, 28 ∙ 20121 Milano | SEDE OPERATIVA: Via B. Crespi, 30 ∙ 20159 Milano
+                2021 © ITS Angelo Rizzoli<br><br>
+                +39 3924765251<br><br>
+                lucarigamonti@itsrizzoli.it
+            </p>
+            
+        </div>
+        <div class="foot">
+            <form method="POST" action="login.html" id="frm">
+                EMAIL<br>
+                <input class="camp" type="email" name="email" required><br><br>
+                PASSWORD<br>
+                <input class="camp" type="password" name="pwd" required><br>
+                <input type="submit" value="Login" name="accedi" id="log"><br>
+                <div><a href="create.html" id="create">Create account</a></div>
+            </form>
+        </div>
+    </section>
+    </main>
+
+
+  </body>
+</html>

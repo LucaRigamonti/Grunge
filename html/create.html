@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/create.css" type="text/css">
+    <title>Create account</title>
+</head>
+<body bgcolor="black">
+
+    <form method="POST" action="" id="frm">
+        <label for="nome">NAME</label><br> 
+        <input class="camp" type="text" name="nome" required><br>
+        <label for="cognome">SURNAME</label><br> 
+        <input class="camp" type="text" name="cognome" required><br>
+        <label for="email">EMAIL</label><br> 
+        <input class="camp" type="email" name="email" required><br>
+        <label for="pwd">PASSWORD</label><br>
+        <input class="camp" type="password" name="pwd" required><br>
+        <input type="submit" value="Create" name="reg" id="log"><br>
+        
+    </form>
+
+    <?php
+
+        if(isset($_POST["reg"]))
+        {
+            $pwd = $_POST["pwd"];
+            $email = $_POST["email"];
+            $nome = $_POST["nome"];
+            $cognome = $_POST["cognome"];
+            
+
+            $pwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+            $conn = mysqli_connect("localhost", "root", "", "grunge");
+
+            $query = "SELECT * FROM utente WHERE email = '$email'";
+            $ris = mysqli_query($conn, $query);
+
+            if(mysqli_num_rows($ris) > 0)
+                echo "<p>Email già in uso</p>";
+            else
+                {
+                    //$query = "INSERT INTO utente(email, pwd, nome, cognome, Data_Nascita) 
+                    //VALUES ('$email','$pwd','$nome','$cognome','$data')";
+
+                    $query="INSERT INTO `utente`(`nome`, `cognome`, `email`, `psw`)
+                    VALUES ('$nome','$cognome','$email','$pwd')";
+                    $ris = mysqli_query($conn, $query);
+
+                    header("Location:login.php");
+                }
+            
+
+        }
+
+    ?>
+    
+    
+</body>
+</html>

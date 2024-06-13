@@ -1,0 +1,175 @@
+<!DOCTYPE html>	<!--commento: obbligatorio in HTML5, indica il contenuto del file-->
+<html>
+  <head>
+  <meta charset="UTF-8">	<!--i caratteri occidentali-->
+	<title>Grunge label</title> 
+	<link rel="stylesheet" href="grunge.css" type="text/css">
+    <link rel="stylesheet" href="prod.css" type="text/css">
+    <link rel="stylesheet" href="blu.css" type="text/css">
+  </head>
+  <body style="margin: 0;" bgcolor="black" >
+
+  <?php
+  session_start();
+  if(isset($_SESSION["user"]))
+  {
+?>
+    
+
+    
+    <section id="header"  >
+        <div id="logo" >      
+          <img src="./img/logo-removebg-preview.png">
+        </div>
+    
+       <div><ul id="navbar" >
+        <li><a  href="grunge-index.php">HOME</a></li>
+        <li><a  href="blu.php">SESSION</a></li>
+        <li><a  href="record.php">RECORDING</a></li>
+        <li><a class="active" href="#prod">PRODUCTIONS</a></li>
+        <li><a href="campus.php">CAMPUS</a></li>
+    
+        <?php
+    
+    if(isset($_SESSION["user"]))
+    {
+    ?>
+    <li><a href="logout.php">LOGOUT</a></li>
+    <?php
+    }
+    ?>
+  
+    
+  <li><a  href="utente.php"><img src="./img/utente-black.png" style="'width: 50px'; height:50px;"></a></li>
+   </ul></div>
+
+       </ul></div>
+       </section>
+
+       
+
+    
+    
+    
+  
+  <section id="info">
+
+       
+   
+     <div class="dati">
+         <div id="text">
+            We are Grunge is dead , we are Grunge is dead label...
+
+            We are the leading record company in Italy and in the world.
+            
+            In everything we do, we are passionately dedicated to the Art, innovation and corporate development.
+            
+            We own and operate a variety of Recorded Music, Music Publishing, Merchandising and Audiovisual content businesses in over 60 countries.
+            In Italy and around the world, we identify and develop artists, performers, songwriters and authors, producing, distributing and promoting critically acclaimed musical hits that excite and entertain fans and listeners of all genres and all over the world.
+            Our vast Catalog spans over a century of Recordings and Songs and represents the largest, most diverse and culturally rich selection of Music ever collected. We boast Italian and international artists of great fame and success, emerging artists who satisfy every expectation of the public in every musical genre.
+            
+            As digital technology revolutionized the music world, our unsurpassed leadership commitment to developing new services, platforms and business models for music delivery and beyond, supports innovators and drives creation and growth of new commercial and artistic opportunities.
+            
+            Knowing that music is a powerful and positive force for bringing together the world and is unique in its ability to inspire and bring people together, we work with our artists and employees to benefit the entire community.
+            We are the home of music's greatest artists, innovators and entrepreneurs.<br>
+            Price €80 for hours.
+         </div>
+     </div>
+     <div class="dati">
+     <div id="prenota">
+        
+        <form method="POST" action="" id="pren">
+            NOMINATIVE<br> 
+            <input class="camp" type="text" name="nominativo"><br><br>
+            DATA<br>
+            <input type="date" class="camp" name="date"><br><br>
+            START TIME<br>
+            <input type="number" min="10" max="24" class="camp" name="inizio"><br><br>
+            END TIME<br>
+            <input type="number" min="10" max="24" class="camp" name="fine"><br><br>
+            PRODUCER<br>
+            <select name="produttore"class="camp"  >
+                <option value="Dario Faini">Dario Faini</option>
+                <option value="Zef">Zef</option>
+                <option value="Fabrizio Ferraguzzo">Fabrizio Ferraguzzo</option>
+                <option value="Takagi & Ketra">Takagi & Ketra</option>
+                <option value="Michelangelo">Michelangelo</option>
+
+              </select>
+              <input type="submit" value="Book now" name="log" id="log"><br>
+              <?php
+    if(isset($_POST["log"]))
+    {
+        $nominativo = $_POST["nominativo"];
+        $data = $_POST["date"];
+        $inizio = $_POST["inizio"];
+        $fine = $_POST["fine"];
+        $produttore = $_POST["produttore"];
+        $email=$_SESSION["user"];
+
+
+        $costo=$fine-$inizio;
+        $costo=$costo*80;
+
+
+        $conn = mysqli_connect("localhost", "root", "", "grunge");
+
+            $query = "SELECT * FROM prenota JOIN servizi ON prenota.id_servizio=servizi.id_servizio WHERE data = '$data' && orario_inizIo = '$inizio' && orario_fine = '$fine' && prenota.id_servizio=3 ";
+            $ris = mysqli_query($conn, $query);
+
+            if(mysqli_num_rows($ris) > 0)
+                echo "<p style='color: red; font-family:Impact; text-align: center;' >Sala occupata</p>";
+            else
+                {
+                  if($costo>0){
+                  $query="INSERT INTO prenota(nominativo, email, data, orario_inizio, orario_fine, produttore,room, id_servizio, costo) 
+                  VALUES ('$nominativo','$email','$data','$inizio','$fine','$produttore','5','3','$costo')";
+                  $ris = mysqli_query($conn, $query);
+                    
+                  //$query="INSERT INTO `utente`(`nome`, `cognome`, `email`, `psw`)
+                  // ('$nome','$cognome','$email','$pwd')";
+
+                    header("Location:grunge-index.php");
+                  }
+                  else{
+                    echo "<p style='color: red; font-family:Impact; text-align: center;' >Hai sbagliato ad inserire l'orario</p>";
+                  }
+                }
+            
+
+    }
+
+?>
+        </form>
+     </div>
+    </div>
+    </section>
+
+
+
+  <section id="bottom"> 
+    
+    <div class="foot">
+      <li><a href="grunge.php">HOME</a></li><br>
+      <li><a href="blu.php">SESSION</a></li><br>
+      <li><a href="record.php">RECORDING</a></li><br>
+      <li><a href="prod.php">PRODUCTIONS</a></li><br>
+      <li><a href="campus.php">CAMPUS</a></li><br>
+    </div>
+    <div class="foot">
+      <div id="foot-text">
+        Via Berchet 2, Monza 20900<br><br>
+        +39 3924765251<br><br>
+        lucarigamonti@itismonza.it
+      </div>
+    </div>
+    
+ </section>
+
+ <?php
+  }
+  else
+  header("Location:login.php");
+?>
+  </body>
+</html>
